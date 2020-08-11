@@ -3,6 +3,7 @@ package com.nowcoder.community.entity;
 /*
 * 封装分页相关信息
 * */
+
 public class Page {
 
     // 当前页码
@@ -74,7 +75,7 @@ public class Page {
     * 获取起始页码
     * */
     public int getFrom(){
-        int from = current-2;
+        int from = current - 2;
         return from < 1 ? 1 : from;
     }
 

@@ -10,7 +10,7 @@ public interface UserMapper {
 
     User selectByName(String username);
 
-    User selectByEmail(String email);
+    User selectByEmail(String email);  // User对象
 
     int insertUser(User user);
 
@@ -21,3 +21,4 @@ public interface UserMapper {
     int updatePassword(int id, String password);
 
 }
+// 接口中的增删改查的方法
