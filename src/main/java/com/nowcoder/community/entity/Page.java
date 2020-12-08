@@ -3,6 +3,7 @@ package com.nowcoder.community.entity;
 /*
 * 封装分页相关信息
 * */
+
 public class Page {
 
     // 当前页码

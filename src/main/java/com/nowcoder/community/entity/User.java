@@ -2,7 +2,9 @@ package com.nowcoder.community.entity;
 
 import java.util.Date;
 
+// 实体类User  -> 对应数据库中User表
 public class User {
+
     private int id;
     private String username;
     private String password;
