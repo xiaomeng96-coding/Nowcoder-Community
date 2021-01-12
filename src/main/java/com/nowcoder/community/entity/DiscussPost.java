@@ -7,6 +7,10 @@ import org.springframework.data.elasticsearch.annotations.FieldType;
 
 import java.util.Date;
 
+<<<<<<< HEAD
+=======
+// 实体类用于封装表中的字段
+>>>>>>> 3431474cdd97cde07b1aa08fe766e0124199e2e0
 @Document(indexName = "discusspost", type = "_doc", shards = 6,replicas = 3)
 public class DiscussPost {
 

@@ -13,6 +13,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+<<<<<<< HEAD
+=======
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.net.Authenticator;
+import java.net.PasswordAuthentication;
+import java.nio.channels.Channels;
+import java.nio.channels.ReadableByteChannel;
+>>>>>>> 3431474cdd97cde07b1aa08fe766e0124199e2e0
 import java.util.Properties;
 
 public class MavenWrapperDownloader {

@@ -72,7 +72,10 @@ public class DiscussPostService {
                         return discussPostMapper.selectDiscussPosts(0,offset,limit,1);
                     }
                 });
+<<<<<<< HEAD
 
+=======
+>>>>>>> 3431474cdd97cde07b1aa08fe766e0124199e2e0
         // 初始化帖子总数缓存
         postRowsCache = Caffeine.newBuilder()
                 .maximumSize(maxSize)
@@ -88,7 +91,11 @@ public class DiscussPostService {
     }
 
     public List<DiscussPost> findDiscussPosts(int userId, int offset, int limit, int orderMode){
+<<<<<<< HEAD
         if(userId ==0 && orderMode ==1) {  // 从缓存中取数据
+=======
+        if(userId ==0 && orderMode ==1) {
+>>>>>>> 3431474cdd97cde07b1aa08fe766e0124199e2e0
             return postListCache.get(offset + ":" + limit);
         }
 
@@ -105,13 +112,21 @@ public class DiscussPostService {
         return discussPostMapper.selectDiscussPostRows(userId);
     }
 
+<<<<<<< HEAD
     public int addDiscussPost(DiscussPost post){   // 增加贴子
+=======
+    public int addDiscussPost(DiscussPost post){
+>>>>>>> 3431474cdd97cde07b1aa08fe766e0124199e2e0
         if(post == null){
             throw new IllegalArgumentException("参数不能为空！");
         }
 
         // 转义HTML标记
+<<<<<<< HEAD
         post.setTitle(HtmlUtils.htmlEscape(post.getTitle()));   // SpringMVC中的方法
+=======
+        post.setTitle(HtmlUtils.htmlEscape(post.getTitle()));
+>>>>>>> 3431474cdd97cde07b1aa08fe766e0124199e2e0
         post.setContent(HtmlUtils.htmlEscape(post.getContent()));
         // 过滤敏感词
         post.setTitle(sensitiveFilter.filter(post.getTitle()));

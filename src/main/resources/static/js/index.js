@@ -36,4 +36,8 @@ function publish() {
 	    }
 	);
 
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 3431474cdd97cde07b1aa08fe766e0124199e2e0

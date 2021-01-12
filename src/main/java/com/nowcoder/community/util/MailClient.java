@@ -11,6 +11,10 @@ import org.springframework.stereotype.Component;
 import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 3431474cdd97cde07b1aa08fe766e0124199e2e0
 @Component
 public class MailClient {
 
@@ -19,7 +23,11 @@ public class MailClient {
     @Autowired
     private JavaMailSender mailSender;
 
+<<<<<<< HEAD
     @Value("${spring.mail.username}")   // 发件人
+=======
+    @Value("${spring.mail.username}")
+>>>>>>> 3431474cdd97cde07b1aa08fe766e0124199e2e0
     private String from;
 
     public void sendMail(String to, String subject, String content){

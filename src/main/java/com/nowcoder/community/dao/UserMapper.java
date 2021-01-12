@@ -21,3 +21,4 @@ public interface UserMapper {
     int updatePassword(int id, String password);
 
 }
+// 接口中的增删改查的方法

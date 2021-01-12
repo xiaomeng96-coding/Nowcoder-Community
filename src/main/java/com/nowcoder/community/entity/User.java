@@ -5,6 +5,10 @@ import java.util.Date;
 // 实体类User  -> 对应数据库中User表
 public class User {
 
+<<<<<<< HEAD
+=======
+    // 属性
+>>>>>>> 3431474cdd97cde07b1aa08fe766e0124199e2e0
     private int id;
     private String username;
     private String password;
