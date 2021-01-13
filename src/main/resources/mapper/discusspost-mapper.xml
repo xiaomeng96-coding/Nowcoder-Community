@@ -13,10 +13,14 @@
     </sql>
 
     <select id="selectDiscussPosts" resultType="DiscussPost">
-        select <include refid="selectFields"></include>
+        <!--select <include refid="selectFields"></include>
         from discuss_post
         where status != 2
+<<<<<<< HEAD
+        <if test="userId!=0">    动态SQL
+=======
         <if test="userId!=0">
+>>>>>>> 3431474cdd97cde07b1aa08fe766e0124199e2e0
             and user_id = #{userId}
         </if>
         <if test="orderMode==0">
@@ -25,7 +29,27 @@
         <if test="orderMode==1">
             order by type desc, score desc, create_time desc
         </if>
+<<<<<<< HEAD
+        limit #{offset}, #{limit}-->
+
+        <!-- 使用索引重构代码-->
+        select d.id,d.user_id,d.title,d.content,d.type,d.status,d.create_time,d.comment_count,d.score
+        from discuss_post d ,(select id from discuss_post
+        <if test="orderMode==0">
+            order by type desc, create_time desc
+        </if>
+        <if test="orderMode==1">
+            order by type desc, score desc,create_time desc
+        </if>
+        limit #{offset}, #{limit}) a
+        where
+        d.id=a.id and status!=2
+        <if test="userId!=0">
+            and user_id=#{userId}
+        </if>
+=======
         limit #{offset}, #{limit}
+>>>>>>> 3431474cdd97cde07b1aa08fe766e0124199e2e0
     </select>
 
     <select id="selectDiscussPostRows" resultType="int">

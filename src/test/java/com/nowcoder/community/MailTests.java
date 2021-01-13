@@ -19,16 +19,28 @@ public class MailTests {
     private MailClient mailClient;
 
     @Autowired
+<<<<<<< HEAD
+    private TemplateEngine templateEngine; // Thymeleaf核心类,生成动态网页
+
+    @Test  // 发送文本邮件
+=======
     private TemplateEngine templateEngine; // Thymeleaf核心类
 
     @Test
+>>>>>>> 3431474cdd97cde07b1aa08fe766e0124199e2e0
     public void testTextMail(){
         mailClient.sendMail("xiaomengcd18@163.com","test","welcome!");
     }
 
+<<<<<<< HEAD
+    @Test  // 发送html邮件
+    public void testHtmlMail(){
+        Context context = new Context(); // thymeleaf
+=======
     @Test
     public void testHtmlMail(){
         Context context = new Context();
+>>>>>>> 3431474cdd97cde07b1aa08fe766e0124199e2e0
         context.setVariable("username","sunday");
 
         String content = templateEngine.process("/mail/demo",context);

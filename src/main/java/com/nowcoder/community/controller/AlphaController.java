@@ -35,16 +35,20 @@ public class AlphaController {
         return alphaService.find();
     }
 
-    @RequestMapping("/http")
+    @RequestMapping("/http")    // HttpServletRequest   请求对象接口
     public void http(HttpServletRequest request, HttpServletResponse response){
-        // 获取请求数据
+        // 获取请求数据    HttpServletResponse -> 响应对象接口
         System.out.println(request.getMethod());
         System.out.println(request.getServletPath());
-        Enumeration<String> enumeration = request.getHeaderNames();
+        Enumeration<String> enumeration = request.getHeaderNames();   // Enumeration -> 迭代器
         while(enumeration.hasMoreElements()){
             String name = enumeration.nextElement();
             String value = request.getHeader(name);
+<<<<<<< HEAD
+            System.out.println(name+ " " +value);
+=======
             System.out.println(name + " " + value);
+>>>>>>> 3431474cdd97cde07b1aa08fe766e0124199e2e0
         }
         System.out.println(request.getParameter("code"));
 
@@ -150,13 +154,22 @@ public class AlphaController {
     // Cookie示例
 
     @RequestMapping(path = "/cookie/set", method = RequestMethod.GET)
+<<<<<<< HEAD
+    @ResponseBody // cookie存放于客户端，少量数据
+    public String setCookie(HttpServletResponse response){  // 响应报文头部
+=======
     @ResponseBody
     public String setCookie(HttpServletResponse response){
+>>>>>>> 3431474cdd97cde07b1aa08fe766e0124199e2e0
         // 创建cookie
         Cookie cookie = new Cookie("code", CommunityUtil.generateUUID());
         // 设置cookie生效范围
         cookie.setPath("/community/alpha");
+<<<<<<< HEAD
+        // 设置cookie生存时间，600s，存放在硬盘中，过期自动失效
+=======
         // 设置cookie生存时间
+>>>>>>> 3431474cdd97cde07b1aa08fe766e0124199e2e0
         cookie.setMaxAge(60*10);
         // 发送cookie
         response.addCookie(cookie);
@@ -166,7 +179,11 @@ public class AlphaController {
 
     @RequestMapping(path = "/cookie/get", method = RequestMethod.GET)
     @ResponseBody
+<<<<<<< HEAD
+    public String getCookie(@CookieValue("code") String code){  // 获得某一个cookie
+=======
     public String getCookie(@CookieValue("code") String code){
+>>>>>>> 3431474cdd97cde07b1aa08fe766e0124199e2e0
         System.out.println(code);
         return "get cookie";
     }
@@ -175,9 +192,15 @@ public class AlphaController {
 
     @RequestMapping(path = "/session/set", method = RequestMethod.GET)
     @ResponseBody
+<<<<<<< HEAD
+    public String setSession(HttpSession session){  // SpringMVC自动创建session，数据存放于内存中
+        session.setAttribute("id",1);
+        session.setAttribute("name", "Bob");
+=======
     public String setSession(HttpSession session){
         session.setAttribute("id",1);
         session.setAttribute("name", "Bod");
+>>>>>>> 3431474cdd97cde07b1aa08fe766e0124199e2e0
         return "set session";
     }
 
@@ -190,7 +213,11 @@ public class AlphaController {
     }
 
     // ajax示例
+<<<<<<< HEAD
+    @RequestMapping(path = "/ajax", method = RequestMethod.POST)  // post请求，异步提交数据，返回字符串
+=======
     @RequestMapping(path = "/ajax", method = RequestMethod.POST)
+>>>>>>> 3431474cdd97cde07b1aa08fe766e0124199e2e0
     @ResponseBody
     public String testAjax(String name, int age){
         System.out.println(name);

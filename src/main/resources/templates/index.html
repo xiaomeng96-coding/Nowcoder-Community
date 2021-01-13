@@ -16,7 +16,11 @@
 <body>	
 	<div class="nk-container">
 		<!-- 头部 -->
+<<<<<<< HEAD
+		<header class="bg-dark sticky-top" th:fragment="header">  <!--让头部这部分代码复用，取名字-->
+=======
 		<header class="bg-dark sticky-top" th:fragment="header">
+>>>>>>> 3431474cdd97cde07b1aa08fe766e0124199e2e0
 			<div class="container">
 				<!-- 导航 -->
 				<nav class="navbar navbar-expand-lg navbar-dark">
@@ -129,7 +133,11 @@
 						</a>
 						<div class="media-body">
 							<h6 class="mt-0 mb-3">
+<<<<<<< HEAD
+				<!--帖子链接-->  <a th:href="@{|/discuss/detail/${map.post.id}|}" th:utext="${map.post.title}"> 备战春招，面试刷题跟他复习，一个月全搞定！</a>
+=======
 								<a th:href="@{|/discuss/detail/${map.post.id}|}" th:utext="${map.post.title}"> 备战春招，面试刷题跟他复习，一个月全搞定！</a>
+>>>>>>> 3431474cdd97cde07b1aa08fe766e0124199e2e0
 								<span class="badge badge-secondary bg-primary" th:if="${map.post.type==1}">置顶</span>
 								<span class="badge badge-secondary bg-danger" th:if="${map.post.status==1}">精华</span>
 							</h6>

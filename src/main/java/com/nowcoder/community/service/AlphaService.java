@@ -61,6 +61,17 @@ public class AlphaService {
     }
 
     //  声明式事务
+<<<<<<< HEAD
+    //  REQUIRED -> 支持当前事务（外部事务，A调用B，即为A的事务），如果不存在就创建新事务
+    //  REQUIRES_NEW -> 创建一个新事务，并且暂停当前事务（外部事务，A调用B，不调用A的事务，创建B的事务）
+    //  NESTED -> 如果当前存在事务（外部事务），则嵌套在该事务中执行（独立的提交和回滚），否则就和REQUIRED一样
+    //  事务的传播机制，解决交叉问题
+
+    @Transactional(isolation = Isolation.READ_COMMITTED,propagation = Propagation.REQUIRED)   // 隔离级别和传播机制
+    public Object savel(){
+        // 新增用户
+        User user = new User();    // 通过构造方法创建用户
+=======
     //  REQUIRED -> 支持当前事务（外部事务），如果不存在就创建新事务
     //  REQUIRES_NEW -> 创建一个新事务，并且暂停当前事务（外部事务）
     //  NESTED -> 如果当前存在事务（外部事务），则嵌套在该事务中执行（独立的提交和回滚），否则就和REQUIRED一样
@@ -69,6 +80,7 @@ public class AlphaService {
     public Object savel(){
         // 新增用户
         User user = new User();
+>>>>>>> 3431474cdd97cde07b1aa08fe766e0124199e2e0
         user.setUsername("alpha");
         user.setSalt(CommunityUtil.generateUUID().substring(0,5));
         user.setPassword(CommunityUtil.md5("123"+user.getSalt()));

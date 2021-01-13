@@ -4,11 +4,11 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.nowcoder.community.dao.UserMapper">
 
-    <sql id="insertFields">
+    <sql id="insertFields">  <!--插入字段-->
         username, password, salt, email, type, status, activation_code, header_url, create_time
     </sql>
 
-    <sql id="selectFields">
+    <sql id="selectFields">  <!--查询字段-->
         id, username, password, salt, email, type, status, activation_code, header_url, create_time
     </sql>
 

@@ -15,7 +15,11 @@
 	<description>nowcoder.community</description>
 
 	<properties>
+<<<<<<< HEAD
+		<java.version>11</java.version>
+=======
 		<java.version>12</java.version>
+>>>>>>> 3431474cdd97cde07b1aa08fe766e0124199e2e0
 	</properties>
 
 	<dependencies>
